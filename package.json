@@ -1,0 +1,23 @@
+{
+  "name": "build4-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal site built to SPEC.md, decomposed across scoped subagents, with an automated acceptance-criteria verification loop.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "setup:chrome": "node scripts/setup-chrome.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@puppeteer/browsers": "^3.2.2",
+    "html-validate": "^11.16.0",
+    "lighthouse": "^13.4.1",
+    "linkinator": "^8.1.0",
+    "tailwindcss": "^3.4.19",
+    "yauzl": "^3.4.0"
+  }
+}
