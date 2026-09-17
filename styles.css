@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* ---- Page shell -------------------------------------------------- */
+
+  html {
+    @apply h-full;
+  }
+
+  body {
+    @apply min-h-screen bg-bg text-ink antialiased font-sans leading-relaxed;
+  }
+
+  /* Direct children of <body> in template.html share one centered,
+     comfortably-padded content column so nothing touches the viewport
+     edge, even at 375px wide. */
+  .site-header,
+  #main,
+  .site-footer {
+    @apply mx-auto w-full max-w-3xl px-4 sm:px-6;
+  }
+
+  /* ---- Skip link ----------------------------------------------------
+     Standard skip-link pattern: pushed off-screen until keyboard focus
+     brings it into view at the top-left corner. */
+
+  .skip-link {
+    @apply absolute left-2 top-2 z-50 -translate-y-24 rounded bg-accent px-4 py-2
+      text-sm font-semibold text-bg shadow-lg transition-transform duration-150
+      focus:translate-y-0 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent;
+  }
+
+  /* ---- Header --------------------------------------------------------- */
+
+  .site-header {
+    @apply flex items-center border-b border-white/10 py-4;
+  }
+
+  .site-name {
+    @apply m-0 text-lg font-bold tracking-tight text-accent;
+  }
+
+  /* ---- Intro ------------------------------------------------------- */
+
+  .page-title {
+    @apply mt-8 break-words text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-5xl;
+  }
+
+  .page-subtitle {
+    @apply mb-8 mt-2 text-base text-ink-muted sm:text-lg;
+  }
+
+  /* ---- Section headings --------------------------------------------- */
+
+  section h2 {
+    @apply mb-4 mt-12 border-b border-accent/30 pb-2 text-xl font-semibold text-accent sm:text-2xl;
+  }
+
+  /* ---- Experience timeline ------------------------------------------ */
+
+  .experience-list {
+    @apply mt-4 list-none space-y-6 border-l-2 border-accent/40 pl-6;
+  }
+
+  .experience-list li {
+    @apply relative;
+  }
+
+  .experience-list li::before {
+    content: "";
+    @apply absolute top-1.5 h-2.5 w-2.5 rounded-full bg-accent left-[-1.9rem];
+  }
+
+  .experience-list li h3 {
+    @apply text-base font-semibold text-ink sm:text-lg;
+  }
+
+  .exp-meta {
+    @apply mt-1 font-mono text-xs uppercase tracking-wide text-accent;
+  }
+
+  .experience-list li p:not(.exp-meta) {
+    @apply mt-2 text-ink-muted;
+  }
+
+  /* ---- Projects ------------------------------------------------------- */
+
+  .project-list {
+    @apply mt-4 list-none divide-y divide-white/10;
+  }
+
+  .project-list li {
+    @apply py-4 first:pt-0 last:pb-0;
+  }
+
+  .project-list li h3 {
+    @apply text-lg font-semibold;
+  }
+
+  .project-list li h3 a {
+    @apply text-accent underline-offset-4 hover:underline;
+  }
+
+  .project-list li p {
+    @apply mt-1 text-ink-muted;
+  }
+
+  /* ---- Contact -------------------------------------------------------- */
+
+  .contact-email {
+    @apply inline-block text-xl font-semibold text-accent underline-offset-4 hover:underline sm:text-2xl;
+  }
+
+  /* ---- Footer --------------------------------------------------------- */
+
+  .site-footer {
+    @apply mb-8 mt-16 text-sm text-ink-muted;
+  }
+
+  /* ---- Default link styling ------------------------------------------- */
+
+  a {
+    @apply text-accent underline-offset-2 transition-colors duration-150 hover:text-accent/80
+      focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+}
